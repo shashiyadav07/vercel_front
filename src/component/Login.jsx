@@ -24,7 +24,7 @@ const [data, setData] = useState({
   const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const res = await fetch('http://localhost:4000/', {
+  const res = await fetch('https://vercel-back-eight.vercel.app/', {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
