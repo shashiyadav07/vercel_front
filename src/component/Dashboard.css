@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background: #ece5dd;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar {
+  width: 300px;
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts,
+.save_contacts {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.contacts {
+  height: 45%;
+  border-bottom: 1px solid #ddd;
+}
+
+.save_contacts {
+  flex: 1;
+}
+
+.contacts h1,
+.save_contacts h1 {
+  font-size: 20px;
+  color: #075e54;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* User Card */
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+  margin-bottom: 8px;
+}
+
+.user-card:hover {
+  background: #f0f2f5;
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #25D366;
+}
+
+.user-btn {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  flex: 1;
+  font-weight: bold;
+}
+
+.user-btn:hover {
+  color: #25D366;
+}
+
+/* ================= Chat Board ================= */
+
+.chat-board {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+.chat-header {
+  height: 70px;
+  background: #075E54;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.chat-logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.chat-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-user img {
+  border: 2px solid white;
+}
+
+.user-info h4 {
+  font-size: 17px;
+}
+
+.user-info span {
+  font-size: 13px;
+}
+
+/* Messages */
+
+#messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #e5ddd5;
+  display: flex;
+  flex-direction: column;
+}
+
+.sent,
+.received {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.sent {
+  align-self: flex-end;
+  background: #dcf8c6;
+}
+
+.received {
+  align-self: flex-start;
+  background: white;
+}
+
+.username {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: gray;
+}
+
+/* Input Box */
+
+#input-box {
+  display: flex;
+  padding: 12px;
+  background: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
+
+#input-box input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+#input-box button {
+  margin-left: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#input-box button:hover {
+  background: #128C7E;
+}
+
+/* Scrollbar */
+
+.contacts::-webkit-scrollbar,
+.save_contacts::-webkit-scrollbar,
+#messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contacts::-webkit-scrollbar-thumb,
+.save_contacts::-webkit-scrollbar-thumb,
+#messages::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 20px;
+}
