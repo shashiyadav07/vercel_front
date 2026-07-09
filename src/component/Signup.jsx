@@ -32,7 +32,7 @@ function Signup() {
     formData.append('profilePic',photo)
 
     try {
-      const res = await fetch("https://vercel-back-eight.vercel.app/signup", {
+      const res = await fetch("https://vercelback-production.up.railway.app/signup", {
         method: "POST",
         // headers: {
         //   "Content-Type": "application/json"
