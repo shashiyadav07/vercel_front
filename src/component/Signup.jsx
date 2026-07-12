@@ -6,6 +6,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const [photo,setPhoto] = useState(null)
+  const [loading,setLoading] = useState(false)
 
   const [data, setData] = useState({
     name: "",
@@ -21,6 +22,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+setLoading(true);
     if (!data.name || !data.email || !data.password) {
       setMessage("All fields are required");
       return;
@@ -51,7 +53,9 @@ function Signup() {
     } catch (err) {
       setMessage("Server error");
       console.log(err);
-    }
+    }finally {
+  setLoading(false);
+}
   }; 
 
   return (
@@ -93,7 +97,7 @@ function Signup() {
             onChange={handleChange}
           />
 
-          <input type="submit" value="Sign Up" />
+          <input type="submit"  disabled={loading} value={loading ? "Signing Up..." : "Sign Up"} />
         </form>
         <div className="signup-link">
           <Link to="/">Login</Link>
