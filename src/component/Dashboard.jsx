@@ -22,6 +22,15 @@ function Dashboard() {
      e.preventDefault();
      console.log(typeof roomId);
 console.log(roomId);
+if (!selectedUser) {
+        alert("Please select a user first.");
+        return;
+    }
+
+    if (!msg.trim()) {
+        alert("Message cannot be empty.");
+        return;
+    }
     socket.emit("private-msg",{
       receiverSocketId:selectedUser?.socketId,
        sender_id: user._id,
